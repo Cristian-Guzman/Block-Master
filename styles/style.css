@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   font-size: 62.5%;
   -webkit-box-sizing: border-box;
@@ -8,12 +9,14 @@ body {
   background-color: #0F0E17;
 }
 
+/* Utilidades */
 .contenedor {
   margin: 0 auto;
   max-width: 120rem;
   width: 90%;
 }
 
+/* Barra navegación */
 .navegacion {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -73,6 +76,16 @@ body {
   border-bottom-right-radius: .8rem;
 }
 
+/* Slides */
+.slides .slider img {
+  height: 300px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 1rem;
+}
+
+/* Sección main */
 main h2 {
   color: #fff;
 }

@@ -10,11 +10,14 @@ body {
     background-color: $background;
 }
 
+/* Utilidades */
 .contenedor {
     margin: 0 auto;
     max-width: 120rem;
     width: 90%;
 }
+
+/* Barra navegación */
 .navegacion {
     display: flex;
     justify-content: space-between;
@@ -58,7 +61,19 @@ body {
         border-bottom-right-radius: .8rem;
     }
 }
+/* Slides */
+.slides {
+    .slider {
+        img {
+            height: 300px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 1rem;
+        }
+    }
+}
 
+/* Sección main */
 main {
     h2 {
         color: $blanco;

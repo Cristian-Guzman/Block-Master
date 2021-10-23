@@ -17,6 +17,7 @@ function muestraSlides(n){
     }
     if(n < 1){
         indice = slides.length;
+        console.log(indice);
     }
     for(let i = 0; i < slides.length; i++){
         slides[i].style.display = 'none';
