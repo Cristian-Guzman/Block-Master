@@ -27,6 +27,14 @@ body {
   grid: 1rem;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  padding: 2.4rem 0;
+}
+
+.navegacion .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 3.5rem;
 }
 
 .navegacion a {

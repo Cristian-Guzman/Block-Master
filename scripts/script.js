@@ -13,10 +13,11 @@ const getData = async() => {
     let {results} = data;
     showData(results);
 }
-const showData = async(data) => {
+const showData = (data) => {
+    console.log(data);
     data.map(datos => {
         let {title, vote_average, release_date, poster_path, overview} = datos;
-        console.log(release_date);
+        console.log(datos);
         // cardImg.innerHTML = ``;
         let card = document.createElement('DIV');
         let infoCard = `
@@ -31,20 +32,3 @@ const showData = async(data) => {
         cards.appendChild(fragment);
     })
 }
-
-
-/* 
-let texto = document.getElementById('inputBuscar').value;
-
-    let data = await getData();
-    let busqueda = data.filter(hero => hero.superhero.toLowerCase() ===  texto.toLowerCase())
-    busqueda.forEach(heroe => {
-        let {superhero,image} = heroe;
-        templateCard.querySelector('h5').textContent = superhero;
- templateCard.querySelector('img').setAttribute('src',image);
-        const clone = templateCard.cloneNode(true);
-        fragment.appendChild(clone);    
-    });
-    items.innerHTML = "";
-    items.appendChild(fragment);
-     */

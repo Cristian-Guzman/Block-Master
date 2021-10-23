@@ -21,6 +21,11 @@ body {
     align-items: center;
     grid: 1rem;
     flex-wrap: wrap;
+    padding: 2.4rem 0;
+    .links {
+        display: flex;
+        gap: 3.5rem;
+    }
     a {
         text-decoration: none;
         color: white;
