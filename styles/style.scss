@@ -48,6 +48,7 @@ body {
         padding: 0 7rem 0 1rem;
         border-radius: 0.5rem;
         border: none;
+        font-size: 1.5rem;
         /* overflow: hidden; */
         outline: none;
     }
@@ -63,6 +64,7 @@ body {
 }
 /* Slides */
 .slides {
+    margin-bottom: 2.4rem;
     .slider {
         img {
             height: 300px;
@@ -75,7 +77,9 @@ body {
 
 /* Sección main */
 main {
-    h2 {
+    .title {
+        font-size: 3.2rem;
+        margin-bottom: 4.8rem;
         color: $blanco;
     }
     .cards {
@@ -85,9 +89,21 @@ main {
     }
 }
 .card {
+    width: 220px;
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+    &__title {
+        color: $blanco;
+        white-space: nowrap;
+        margin: 0 0 1rem;
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
     &__img {
         img {
-            width: 20vw;
+            width: 100%;
             height: auto;
         }
     }

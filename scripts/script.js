@@ -20,10 +20,11 @@ const showData = (data) => {
         let {title, vote_average, release_date, poster_path, overview} = datos;
         // cardImg.innerHTML = ``;
         let card = document.createElement('DIV');
+        card.classList.add('card');
         let infoCard = `
+        <h1 class="card__title">${title}</h1>
         <div class="card__puntuacion"></div>
-        <div class="card__img"><img src="${IMG_PATH + poster_path}">
-        </div>`;
+        <div class="card__img"><img src="${IMG_PATH + poster_path}"></div>`;
         card.innerHTML = infoCard;
         /* let cardPuntuacion = document.createElement('DIV').classList.add('card__puntuacion');
         let cardImg = document.createElement('DIV').classList.add('card__img'); */
