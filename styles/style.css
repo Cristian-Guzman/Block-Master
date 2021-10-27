@@ -79,7 +79,14 @@ body {
 
 /* Slides */
 .slides {
-  margin-bottom: 2.4rem;
+  margin-top: -7rem;
+  margin-bottom: 3.4rem;
+}
+
+.slides .slider__imagen {
+  color: #000;
+  height: 1.5rem !important;
+  width: auto !important;
 }
 
 .slides .slider img {
@@ -88,6 +95,66 @@ body {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 1rem;
+}
+
+.slides .slider .boton-amarillo {
+  width: 13rem;
+  height: 2.5rem;
+  padding: 1rem 2.4rem;
+  background-color: #FED941;
+  position: relative;
+  top: 32rem;
+  left: 3rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 3fr;
+      grid-template-columns: 1fr 3fr;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.slides .slider .boton-amarillo p {
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: 700;
+  line-height: 2.8rem;
+  font-family: Montserrat;
+  text-transform: uppercase;
+}
+
+.slides .slider .boton-negro {
+  width: 13rem;
+  height: 2.5rem;
+  padding: 1rem 2.4rem;
+  background-color: #0C0E16;
+  border: 0.43997px solid #FED941;
+  position: relative;
+  top: 27.5rem;
+  left: 27rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 3fr;
+      grid-template-columns: 1fr 3fr;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.slides .slider .boton-negro p {
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: 700;
+  line-height: 2.8rem;
+  font-family: Montserrat;
+  color: #FED941;
+  text-transform: uppercase;
 }
 
 /* Sección main */
