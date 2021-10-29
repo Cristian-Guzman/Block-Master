@@ -35,8 +35,13 @@ body {
         text-decoration: none;
         color: white;
         font-size: 2rem;
+        transition: all .4s ease-in-out;
         img {
             background-color: $background;
+        }
+        &:focus {
+            color: $amarillo;
+            border-bottom: 1px solid $amarillo;
         }
     }
     .btn-search {
@@ -67,7 +72,7 @@ body {
 /* Slides */
 .slides {
     margin-top: -7rem;
-    margin-bottom: 3.4rem;
+    margin-bottom: 6.5rem;
     .slider {
         &__imagen {
             color: $negro;
@@ -134,7 +139,7 @@ body {
 /* Sección main */
 main {
     .title {
-        font-size: 3.2rem;
+        font-size: 4rem;
         margin-bottom: 4.8rem;
         color: $blanco;
     }
@@ -162,5 +167,107 @@ main {
             width: 100%;
             height: auto;
         }
+    }
+    &__puntuacion {
+        img {
+            margin-left: 1rem;
+        }
+        position: relative;
+        top: 6em;
+        width: 8.5rem;
+        background-color: $negro;
+        opacity: .64;
+        span {
+            color: $blanco;
+            font-size: 3rem;
+            line-height: 1.4;
+            &:first-of-type {
+                margin-left: 1rem;
+            }
+        }
+        &-curva {
+            position: relative;
+            right: 1rem;
+            height: 30px;
+            width: 15px;
+            padding: .4rem 1.5rem;
+            border-bottom-right-radius: 30px;
+            border-top-right-radius: 30px;
+            background-color: inherit;
+            z-index: -1;
+        }
+    }
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    /* Modal Content */
+    &-content {
+      background-color: #fefefe;
+      height: 80%;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+    }
+    &__input {
+        font-size: 3rem;
+        &:nth-child(5) {
+            margin-bottom: 4rem;
+        }
+    }
+    &__texto {
+        font-size: 2.5rem;
+    }
+    &__enviar {
+        cursor: pointer;
+        width: 30%;
+        padding: 1rem 3rem;
+        background-color: $background;
+        color: $blanco;
+        font-size: 2.5rem;
+    }
+    &-flex {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+}
+
+  #myBtn {
+    cursor: pointer;
+    color: $blanco;
+    position: fixed;    
+    font-size: 4rem;
+    z-index: 1;
+    top: 85%;
+    right: 5%;
+}
+
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    &:hover, &:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
     }
 }

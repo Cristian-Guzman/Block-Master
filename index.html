@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/normalize.css">
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
     <title>Block Master</title>
 </head>
 <body>
@@ -13,9 +14,9 @@
     <nav class="navegacion">
       <a href="index.html"><img src="img/logo-blockBuster.png" alt="Logo"></a>
       <div class="links">
-        <a href="#">Todas</a>
-        <a href="#">Más valoradas</a>
-        <a href="#">Menos valoradas</a>
+        <a class="todas" href="#">Todas</a>
+        <a class="masValoradas" href="#">Más valoradas</a>
+        <a class="menosValoradas" href="#">Menos valoradas</a>
       </div>
       <div class="btn-search">
         <input type="text" name="search" id="busqueda">
@@ -65,8 +66,33 @@
       <h1 class="title">Todas las películas</h1>
       <div class="cards"></div>
     </div>
-  </main>
-
+    
+  </div>
+</main>
+<footer>
+  <!-- Trigger/Open The Modal -->
+  <i class="fas fa-user" id="myBtn"></i>
+  
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+  
+  <!-- Modal content -->
+  <form class="modal-content">
+    <span class="close">&times;</span>
+    <input class="modal__input" type="text" name="" id="name" placeholder="nombre">
+    <input class="modal__input" type="text" name="" id="lastName" placeholder="apellido">
+    <input class="modal__input" type="text" name="" id="email" placeholder="correo">
+    <input class="modal__input" type="text" name="" id="id" placeholder="Id">
+    <!-- <p class="modal__texto">Some text in the Modal..</p> -->
+    <div class="modal-flex">
+      <input type="submit" value="Guardar usuario" class="modal__enviar" id="formulario">
+      <input type="button" value="Buscar usuario" class="modal__enviar" id="btnCorreo">
+      <input type="button" value="Editar usuario" class="modal__enviar" id="btnEditar">
+      <input type="button" value="Eliminar usuario" class="modal__enviar" id="btnEliminar">
+    </div>
+  </form>
+</footer>
+    <script src="scripts/registro.js"></script>
     <script src="scripts/script.js"></script>
     <script src="scripts/slides.js"></script>
 </body>
