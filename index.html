@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/normalize.css">
-    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
-    <title>Block Master</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/normalize.css">
+  <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+  <title>Block Master</title>
 </head>
+
 <body>
   <header class="contenedor">
     <nav class="navegacion">
@@ -66,34 +68,33 @@
       <h1 class="title">Todas las películas</h1>
       <div class="cards"></div>
     </div>
-    
-  </div>
-</main>
-<footer>
-  <!-- Trigger/Open The Modal -->
-  <i class="fas fa-user" id="myBtn"></i>
-  
-  <!-- The Modal -->
-  <div id="myModal" class="modal">
-  
-  <!-- Modal content -->
-  <form class="modal-content">
-    <span class="close">&times;</span>
-    <input class="modal__input" type="text" name="" id="name" placeholder="nombre">
-    <input class="modal__input" type="text" name="" id="lastName" placeholder="apellido">
-    <input class="modal__input" type="text" name="" id="email" placeholder="correo">
-    <input class="modal__input" type="text" name="" id="id" placeholder="Id">
-    <!-- <p class="modal__texto">Some text in the Modal..</p> -->
-    <div class="modal-flex">
-      <input type="submit" value="Guardar usuario" class="modal__enviar" id="formulario">
-      <input type="button" value="Buscar usuario" class="modal__enviar" id="btnCorreo">
-      <input type="button" value="Editar usuario" class="modal__enviar" id="btnEditar">
-      <input type="button" value="Eliminar usuario" class="modal__enviar" id="btnEliminar">
+
     </div>
-  </form>
-</footer>
-    <script src="scripts/registro.js"></script>
-    <script src="scripts/script.js"></script>
-    <script src="scripts/slides.js"></script>
+  </main>
+  <footer>
+    <i class="fas fa-user" id="myBtn"></i>
+  <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+      <div class="modal-dialog">
+        <div class="loginmodal-container">
+          <h1>Login to Your Account</h1><br>
+          <form>
+            <input class="casillas" id="name" type="text" name="nombres" placeholder="Nombres">
+            <input class="casillas" id="lastName" type="text" name="apellido" placeholder="Apellidos">
+            <input class="casillas" id="email" type="email" name="email" placeholder="Correo">
+            <input id="id" type="number" style="visibility: hidden;">
+            <input type="submit" name="login" class="login loginmodal-submit" value="Login">
+          </form>
+  
+          <div class="login-help">
+            <a href="#">Register</a> - <a href="#">Forgot Password</a>
+          </div>
+        </div>
+      </div>
+  </div> <!-- .modal -->
+  </footer>
+  <script src="scripts/registro.js"></script>
+  <script src="scripts/script.js"></script>
+  <script src="scripts/slides.js"></script>
 </body>
+
 </html>
