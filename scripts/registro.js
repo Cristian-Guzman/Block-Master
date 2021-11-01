@@ -5,41 +5,44 @@ const btnEliminar = document.querySelector('#btnEliminar');
 const API = 'http://localhost:4004/usuarios';
 const modal = document.querySelector(".modal");
 
-// Get the button that opens the modal
+// Trae el botón que abre el modal
 const btn = document.getElementById("myBtn");
 
-// Get the <span> element that closes the modal
-// const span = document.getElementsByClassName("close")[0];
 
-// When the user clicks the button, open the modal 
+// Cuando el usuario toca el botón, se abre el modal
 btn.addEventListener('click', () => {
   modal.style.display = "block";
 })
 
-// When the user clicks anywhere outside of the modal, close it
+// Cuando el usuario toca cualquier parte fuera del modal, se cierra
 window.addEventListener('click', e => {
     if (e.target == modal) {
       modal.style.display = "none";
     }
 })
 
+
 formulario.addEventListener('click', async e => {
     e.preventDefault();
     const name = document.querySelector('#name').value;
     const lastName = document.querySelector('#lastName').value;
     const email = document.querySelector('#email').value;
-    await fetch(API, {
-        method: 'POST',
-        body: JSON.stringify({
-            name,
-            lastName,
-            email
-        }),
-        headers: {  
-            "Content-Type": "application/json; charset=UTF-8"
-        }
-    });
-    alert('Usuario guardado exitosamente');
+    if (name === "" || lastName === "" || email === "") {
+        alert('Rellena todos los campos');
+    } else {
+        await fetch(API, {
+            method: 'POST',
+            body: JSON.stringify({
+                name,
+                lastName,
+                email
+            }),
+            headers: {  
+                "Content-Type": "application/json; charset=UTF-8"
+            }
+        })
+        alert('Usuario guardado exitosamente');
+    }
 })
 
 // btnCorreo.addEventListener('click', async e => {

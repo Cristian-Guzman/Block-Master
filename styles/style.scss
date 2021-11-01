@@ -85,55 +85,52 @@ body {
             object-fit: cover;
             border-radius: 1rem;
         }
-        .boton-amarillo {
-            width: 13rem;
-            height: 2.5rem;
-            padding: 1rem 2.4rem;
-            background-color: $amarillo;
-            position: relative;
-            top: 32rem;
-            left: 3rem;
-            display: grid;
-            grid-template-columns: 1fr 3fr;
-            // gap: 1rem;
-            align-content: center;
-            align-items: center;
-            cursor: pointer;
-            p {
-                font-size: 1.2rem;
-                text-align: center;
-                font-weight: 700;
-                line-height: 2.8rem;
-                font-family: Montserrat;
-                text-transform: uppercase;
-            }                
-        }
-        .boton-negro {
-            width: 13rem;
-            height: 2.5rem;
-            padding: 1rem 2.4rem;
-            background-color: $btnNegro;
-            border: 0.439971px solid $amarillo;
-            position: relative;
-            top: 27.5rem;
-            left: 27rem;
-            display: grid;
-            grid-template-columns: 1fr 3fr;
-            // gap: 1rem;
-            align-content: center;
-            align-items: center;
-            cursor: pointer;
-            p {
-                font-size: 1.2rem;
-                text-align: center;
-                font-weight: 700;
-                line-height: 2.8rem;
-                font-family: Montserrat;
-                color: $amarillo;
-                text-transform: uppercase;
-            }                
-        }
     }
+}
+.boton {
+    width: 13rem;
+    height: 2.5rem;
+    padding: 1rem 2.4rem;
+    position: relative;
+    align-content: center;
+    align-items: center;
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    p {
+        font-size: 1.2rem;
+        text-align: center;
+        font-weight: 700;
+        line-height: 2.8rem;
+        font-family: Montserrat;
+        text-transform: uppercase;
+    }                
+}
+.boton-amarillo {
+    top: 32rem;
+    left: 3rem;
+    padding: 1rem 2.4rem;
+    background-color: $amarillo;
+}
+.amarillo {
+    background-color: $amarillo;
+}
+.negro {
+    background-color: $negro;
+}
+.boton-negro {
+    padding: 1rem 2.4rem;
+    background-color: $btnNegro;
+    border: 0.439971px solid $amarillo;
+    top: 27.5rem;
+    left: 27rem;
+    p {
+        color: $amarillo;
+    }
+}
+
+.botones {
+    display: flex;
 }
 
 /* Sección main */
@@ -150,6 +147,7 @@ main {
     }
 }
 .card {
+    cursor: pointer;
     width: 220px;
     position: relative;
     overflow: hidden;
@@ -200,7 +198,7 @@ main {
 }
 
 /****** LOGIN MODAL ******/
-.modal {
+.modal, .modal-video {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -212,6 +210,10 @@ main {
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.modal-video {
+    background-color: #0F0E17;
+    opacity: .9;
 }
 .loginmodal-container {
     padding: 30px;
@@ -225,7 +227,8 @@ main {
     font-family: roboto;
   }
   .title_icon {
-      font-size: 2rem;
+      color: #4d90fe;
+      font-size: 2.5rem;
   }
   
   .loginmodal-container input[type=submit] {
@@ -245,13 +248,12 @@ main {
     background: #fff;
     border: 1px solid #d9d9d9;
     border-top: 1px solid #c0c0c0;
-    /* border-radius: 2px; */
     padding: 0 8px;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
   }
   
-  .loginmodal-container input[type=text]:hover, input[type=password]:hover {
+  .loginmodal-container .casillas:hover {
     border: 1px solid #b9b9b9;
     border-top: 1px solid #a0a0a0;
     -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
@@ -266,13 +268,9 @@ main {
     font-weight: 700;
     height: 36px;
     padding: 0 8px;
-  /* border-radius: 3px; */
-  /* -webkit-user-select: none;
-    user-select: none; */
   }
   
   .loginmodal-submit {
-    /* border: 1px solid #3079ed; */
     border: 0px;
     color: #fff;
     text-shadow: 0 1px rgba(0,0,0,0.1); 
@@ -280,15 +278,12 @@ main {
     padding: 17px 0px;
     font-family: roboto;
     font-size: 14px;
-    /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
   }
   
   .loginmodal-submit:hover {
-    /* border: 1px solid #2f5bb7; */
     border: 0px;
     text-shadow: 0 1px rgba(0,0,0,0.3);
     background-color: #357ae8;
-    /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
   }
   
   .loginmodal-container a {
@@ -315,16 +310,45 @@ main {
     right: 5%;
 }
 
-/* The Close Button */
-.close {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    &:hover, &:focus {
-        color: #000;
-        text-decoration: none;
-        cursor: pointer;
+.title_modal {
+    margin-top: -2rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.modal-contenido {
+    padding: 30px;
+    margin: 0 auto;
+    border-radius: 2px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    font-family: roboto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+}
+.poster {
+    width: 100%;
+    &__img {
+        position: relative;
+        left: 4rem;
+        width: 20rem;
+        border-radius: 9.78169px;
+        transform: matrix(0.71, -0.41, 1.22, 0.71, 0, 0);
+
+    }
+    &__info {
+        width: 100%;
+        font-size: 2rem;
+        color: $blanco;
     }
 }
-    /* Acaba el modal xd */
+.informacion-pelicula {
+
+    p {
+        font-family: 'Montserrat', sans-serif;
+        color: #FFFFFE;
+    }
+}

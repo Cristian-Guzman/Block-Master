@@ -104,27 +104,24 @@ body {
   border-radius: 1rem;
 }
 
-.slides .slider .boton-amarillo {
+.boton {
   width: 13rem;
   height: 2.5rem;
   padding: 1rem 2.4rem;
-  background-color: #FED941;
   position: relative;
-  top: 32rem;
-  left: 3rem;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 3fr;
-      grid-template-columns: 1fr 3fr;
   -ms-flex-line-pack: center;
       align-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 3fr;
+      grid-template-columns: 1fr 3fr;
 }
 
-.slides .slider .boton-amarillo p {
+.boton p {
   font-size: 1.2rem;
   text-align: center;
   font-weight: 700;
@@ -133,35 +130,37 @@ body {
   text-transform: uppercase;
 }
 
-.slides .slider .boton-negro {
-  width: 13rem;
-  height: 2.5rem;
+.boton-amarillo {
+  top: 32rem;
+  left: 3rem;
+  padding: 1rem 2.4rem;
+  background-color: #FED941;
+}
+
+.amarillo {
+  background-color: #FED941;
+}
+
+.negro {
+  background-color: #000;
+}
+
+.boton-negro {
   padding: 1rem 2.4rem;
   background-color: #0C0E16;
   border: 0.43997px solid #FED941;
-  position: relative;
   top: 27.5rem;
   left: 27rem;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 3fr;
-      grid-template-columns: 1fr 3fr;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  cursor: pointer;
 }
 
-.slides .slider .boton-negro p {
-  font-size: 1.2rem;
-  text-align: center;
-  font-weight: 700;
-  line-height: 2.8rem;
-  font-family: Montserrat;
+.boton-negro p {
   color: #FED941;
-  text-transform: uppercase;
+}
+
+.botones {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 /* Sección main */
@@ -181,6 +180,7 @@ main .cards {
 }
 
 .card {
+  cursor: pointer;
   width: 220px;
   position: relative;
   overflow: hidden;
@@ -236,7 +236,7 @@ main .cards {
 }
 
 /****** LOGIN MODAL ******/
-.modal {
+.modal, .modal-video {
   display: none;
   /* Hidden by default */
   position: fixed;
@@ -259,6 +259,11 @@ main .cards {
   /* Black w/ opacity */
 }
 
+.modal-video {
+  background-color: #0F0E17;
+  opacity: .9;
+}
+
 .loginmodal-container {
   padding: 30px;
   max-width: 350px;
@@ -273,7 +278,8 @@ main .cards {
 }
 
 .title_icon {
-  font-size: 2rem;
+  color: #4d90fe;
+  font-size: 2.5rem;
 }
 
 .loginmodal-container input[type=submit] {
@@ -293,14 +299,13 @@ main .cards {
   background: #fff;
   border: 1px solid #d9d9d9;
   border-top: 1px solid #c0c0c0;
-  /* border-radius: 2px; */
   padding: 0 8px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
 
-.loginmodal-container input[type=text]:hover, input[type=password]:hover {
+.loginmodal-container .casillas:hover {
   border: 1px solid #b9b9b9;
   border-top: 1px solid #a0a0a0;
   -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
@@ -314,13 +319,9 @@ main .cards {
   font-weight: 700;
   height: 36px;
   padding: 0 8px;
-  /* border-radius: 3px; */
-  /* -webkit-user-select: none;
-    user-select: none; */
 }
 
 .loginmodal-submit {
-  /* border: 1px solid #3079ed; */
   border: 0px;
   color: #fff;
   text-shadow: 0 1px rgba(0, 0, 0, 0.1);
@@ -328,15 +329,12 @@ main .cards {
   padding: 17px 0px;
   font-family: roboto;
   font-size: 14px;
-  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
 }
 
 .loginmodal-submit:hover {
-  /* border: 1px solid #2f5bb7; */
   border: 0px;
   text-shadow: 0 1px rgba(0, 0, 0, 0.3);
   background-color: #357ae8;
-  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
 }
 
 .loginmodal-container a {
@@ -364,19 +362,54 @@ main .cards {
   right: 5%;
 }
 
-/* The Close Button */
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+.title_modal {
+  margin-top: -2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
 }
 
-.close:hover, .close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
+.modal-contenido {
+  padding: 30px;
+  margin: 0 auto;
+  border-radius: 2px;
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  font-family: roboto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
 }
 
-/* Acaba el modal xd */
+.poster {
+  width: 100%;
+}
+
+.poster__img {
+  position: relative;
+  left: 4rem;
+  width: 20rem;
+  border-radius: 9.78169px;
+  -webkit-transform: matrix(0.71, -0.41, 1.22, 0.71, 0, 0);
+          transform: matrix(0.71, -0.41, 1.22, 0.71, 0, 0);
+}
+
+.poster__info {
+  width: 100%;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.informacion-pelicula p {
+  font-family: 'Montserrat', sans-serif;
+  color: #FFFFFE;
+}
 /*# sourceMappingURL=style.css.map */

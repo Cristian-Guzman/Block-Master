@@ -28,33 +28,33 @@
     <div class="slides">
 
       <div class="slider">
-        <span class="boton-amarillo">
+        <span class="boton boton-amarillo">
           <span><img class="slider__imagen" src="img/play.png" alt=""></span>
           <p>Ver ahora</p>
         </span>
-        <span class="boton-negro">
+        <span class="boton boton-negro">
           <span><img class="slider__imagen" src="img/plus.png" alt=""></span>
           <p>Ver después</p>
         </span>
         <img src="img/slide-mulan.png" alt="">
       </div> <!-- .slider -->
       <div class="slider">
-        <span class="boton-amarillo">
+        <span class="boton boton-amarillo">
           <span><img class="slider__imagen" src="img/play.png" alt=""></span>
           <p>Ver ahora</p>
         </span>
-        <span class="boton-negro">
+        <span class="boton boton-negro">
           <span><img class="slider__imagen" src="img/plus.png" alt=""></span>
           <p>Ver después</p>
         </span>
         <img src="img/slider-raya.png" alt="">
       </div> <!-- .slider -->
       <div class="slider">
-        <span class="boton-amarillo">
+        <span class="boton boton-amarillo">
           <span><img class="slider__imagen" src="img/play.png" alt=""></span>
           <p>Ver ahora</p>
         </span>
-        <span class="boton-negro">
+        <span class="boton boton-negro">
           <span><img class="slider__imagen" src="img/plus.png" alt=""></span>
           <p>Ver después</p>
         </span>
@@ -62,7 +62,6 @@
       </div> <!-- .slider -->
     </div>
   </header>
-
   <main>
     <div class="contenedor">
       <h1 class="title">Todas las películas</h1>
@@ -73,10 +72,14 @@
   </main>
   <footer>
     <i class="fas fa-user" id="myBtn"></i>
-  <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+      aria-hidden="true" style="display: none;">
       <div class="modal-dialog">
         <div class="loginmodal-container">
-          <div class="title_icon fas fa-user">Ingresa en tu cuenta</div>
+          <div class="title_modal">
+            <div class="title_icon fas fa-user"></div>
+            <h1 class="title_texto">Ingresa en tu cuenta</h1>
+          </div>
           <!-- <h1>Login to Your Account</h1><br> -->
           <form>
             <input class="casillas" id="name" type="text" name="nombres" placeholder="Nombres">
@@ -85,13 +88,13 @@
             <input id="id" type="number" style="visibility: hidden;">
             <input type="submit" name="login" id="formulario" class="login loginmodal-submit" value="Login">
           </form>
-  
+
           <div class="login-help">
             <a href="#">Register</a> - <a href="#">Forgot Password</a>
           </div>
         </div>
       </div>
-  </div> <!-- .modal -->
+    </div> <!-- .modal -->
   </footer>
   <script src="scripts/registro.js"></script>
   <script src="scripts/script.js"></script>
