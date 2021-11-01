@@ -38,9 +38,9 @@ const showData = (data) => {
         console.log(datos);
         let { title, vote_average, release_date, poster_path, overview, id, backdrop_path } = datos;
 
+        const trailerWait = await trailer(id);
         let iFrame = document.createElement('DIV');
         let card = document.createElement('DIV');
-        const trailerWait = await trailer(id);
         card.classList.add('card');
         iFrame.classList.add('modal-video');
         let infoCard = `
@@ -52,7 +52,7 @@ const showData = (data) => {
             <p>${release_date}</p>
         </div>
         <div class="botones">
-          <span class="boton amarillo">
+          <span class="boton amarillo verAhora">
             <span><img class="slider__imagen" src="img/play.png" alt=""></span>
             <p>Ver ahora</p>
           </span>
@@ -61,29 +61,57 @@ const showData = (data) => {
             <p>Ver después</p>
           </span>
         </div>
+        <button class="close">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M2.27604 0.390625L0.390625 2.27604L10.1146 12L0.390625 21.724L2.27604 23.6094L12 13.8854L21.724 23.6094L23.6094 21.724L13.8854 12L23.6094 2.27604L21.724 0.390625L12 10.1146L2.27604 0.390625Z" fill="#FFFFFE"/>
+            </svg>
+        </button>
       </div>
-      <div class="" style="display: none; aspect-ratio: 16 / 9;"><iframe id="youtube-4095" frameborder="0"
-          allowfullscreen="1"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          title="${title}" width="640" height="360" src="${defaultURL + trailerWait}"></iframe>
-        <div class="plyr__poster"
-          style="background-image: url(&quot;https://i.ytimg.com/vi/p9iFkkf0TCU/maxresdefault.jpg&quot;);">
+    <div class="modal-trailer">
+        <div class="trailer" style="aspect-ratio: 16 / 9;"><iframe id="youtube-4095" frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            title="${title}" width="640" height="360" src="${defaultURL + trailerWait}"></iframe>
+            <div class="plyr__poster"
+               style="background-image: url(&quot;https://i.ytimg.com/vi/p9iFkkf0TCU/maxresdefault.jpg&quot;);">
+            </div>
         </div>
-      </div>
     </div>`;
         iFrame.innerHTML = iframe;
         card.innerHTML = infoCard;
-        
+
         let fragment = document.createDocumentFragment();
         card.appendChild(iFrame);
         fragment.appendChild(card);
         cards.appendChild(fragment);
-        
+
+        const close = document.querySelectorAll('.close')[indice];
         let modalVideo = document.querySelectorAll('.modal-video')[indice];
         let cardImg = document.querySelectorAll('.card__img')[indice];
-        cardImg.addEventListener('click', e => {
-            modalVideo.style.display = "block";
+        let mostrarTrailer = document.querySelectorAll('.modal-trailer')[indice];
+        let verAhora = document.querySelectorAll('.verAhora')[indice];
+        verAhora.addEventListener('click', e => {
+            mostrarTrailer.classList.add('trailer-view');
         })
+        cardImg.addEventListener('click', e => {
+            modalVideo.style.display = 'block'; 
+        })
+        close.addEventListener('click', e => {
+            modalVideo.style.display = 'none'; 
+        })
+                // Cuando el usuario toca cualquier parte fuera del modal, se cierra
+
+        document.addEventListener("click", function(event) {
+                // If user either clicks X button OR clicks outside the modal window, then close modal by calling closeModal()
+                // || !event.target.closest(".modal-trailer")
+                if (event.target.matches(".close")) {
+                // closeModal()
+                modalVideo.style.display = 'none'; 
+              }
+            },
+            false
+          )
+          function closeModal() {
+            mostrarTrailer.style.display = "none"
+          }
     })
 }
 

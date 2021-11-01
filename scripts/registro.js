@@ -4,6 +4,7 @@ const btnEditar = document.querySelector('#btnEditar');
 const btnEliminar = document.querySelector('#btnEliminar');
 const API = 'http://localhost:4004/usuarios';
 const modal = document.querySelector(".modal");
+/* const modalVideo = document.querySelector('.modal-contenido'); */
 
 // Trae el botón que abre el modal
 const btn = document.getElementById("myBtn");
@@ -12,13 +13,6 @@ const btn = document.getElementById("myBtn");
 // Cuando el usuario toca el botón, se abre el modal
 btn.addEventListener('click', () => {
   modal.style.display = "block";
-})
-
-// Cuando el usuario toca cualquier parte fuera del modal, se cierra
-window.addEventListener('click', e => {
-    if (e.target == modal) {
-      modal.style.display = "none";
-    }
 })
 
 
