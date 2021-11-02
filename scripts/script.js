@@ -1,3 +1,5 @@
+import getPeliculas from "./peliculas.js";
+
 const trailerI = 'https://api.themoviedb.org/3/movie/';
 const trailerF = '/videos?api_key=3fd2be6f0c70a2a598f084ddfb75487c&language=en-US';
 const defaultURL = 'https://www.youtube.com/embed/';
@@ -16,6 +18,7 @@ const total_pages = 5;
 
 document.addEventListener('DOMContentLoaded', () => {
     getData();
+    formularioModal();
 })
 
 const trailer = async (id) => {
@@ -33,6 +36,7 @@ const getData = async () => {
     showData(results);
     /* votacion(results); */
 }
+
 const showData = (data) => {
     data.map(async (datos, indice) => {
         console.log(datos);
@@ -102,19 +106,27 @@ const showData = (data) => {
         document.addEventListener("click", function(event) {
                 // If user either clicks X button OR clicks outside the modal window, then close modal by calling closeModal()
                 // || !event.target.closest(".modal-trailer")
-                if (event.target.matches(".close")) {
-                // closeModal()
-                modalVideo.style.display = 'none'; 
-              }
+                if (event.target.matches(".close")) modalVideo.style.display = 'none'; 
+                if (event.target.matches(".modal-trailer")) mostrarTrailer.style.display = 'none';
             },
             false
           )
           function closeModal() {
-            mostrarTrailer.style.display = "none"
+            modalVideo.style.display = 'none'; 
           }
     })
 }
 
+try {
+    async function traerPeliculas() {
+        const movies = await getPeliculas();
+        showData(movies)
+        debugger
+    }
+    traerPeliculas()
+} catch (error) {
+    console.log(error);
+}
 
 /* const votacionMayor = (data) => {
     let cardPuntuacion = document.querySelector('.card__puntuacion');
@@ -134,8 +146,7 @@ const showData = (data) => {
  */
 todasValor.addEventListener('click', async e => {
     cards.innerHTML = '';
-
-    showData(results);
+    getData();
 })
 masValoradas.addEventListener('click', async e => {
     cards.innerHTML = '';

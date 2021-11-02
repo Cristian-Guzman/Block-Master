@@ -1,4 +1,6 @@
 @charset "UTF-8";
+@import url("./registro.scss");
+@import url("https://fonts.googleapis.com/css?family=Bree+Serif|Quicksand");
 html {
   font-size: 62.5%;
   -webkit-box-sizing: border-box;
@@ -7,6 +9,7 @@ html {
 
 body {
   background-color: #0F0E17;
+  font-family: 'Bree Serif', serif;
 }
 
 /* Utilidades */
@@ -373,6 +376,24 @@ main .cards {
   z-index: 1;
   top: 85%;
   right: 5%;
+}
+
+.registroBtn {
+  color: #FED941;
+  position: fixed;
+  font-size: 4.4rem;
+  z-index: 1;
+  top: 85%;
+  right: 10%;
+  text-decoration: none;
+}
+
+.registroBtn i:nth-child(1) {
+  position: relative;
+  font-size: 2rem;
+  color: #000;
+  bottom: .6rem;
+  left: 3rem;
 }
 
 .title_modal {

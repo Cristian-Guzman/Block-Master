@@ -1,3 +1,5 @@
+@import url('./registro.scss');
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif|Quicksand');
 $background: #0F0E17;
 $amarillo: #FED941;
 $blanco: #fff;
@@ -10,6 +12,7 @@ html {
 }
 body {
     background-color: $background;
+    font-family: 'Bree Serif', serif;
 }
 
 /* Utilidades */
@@ -311,13 +314,31 @@ main {
   }
   
   #myBtn {
-      cursor: pointer;
+    cursor: pointer;
     color: $blanco;
     position: fixed;    
     font-size: 4rem;
     z-index: 1;
     top: 85%;
     right: 5%;
+}
+.registroBtn {
+    color: $amarillo;
+    position: fixed;
+    font-size: 4.4rem;
+    z-index: 1;
+    top: 85%;
+    right: 10%;
+    text-decoration: none;
+    i {
+        &:nth-child(1) {
+            position: relative;
+            font-size: 2rem;
+            color: $negro;
+            bottom: .6rem;
+            left: 3rem;
+        }
+    }
 }
 
 .title_modal {
@@ -339,12 +360,6 @@ main {
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: $negro;
-    // width: 100vw;
-    // height: 90vh;
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
-    // z-index: 2;
 }
 .modal-contenido {
     padding: 30px;
