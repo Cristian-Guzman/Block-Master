@@ -55,7 +55,7 @@ body {
   background-color: #0F0E17;
 }
 
-.navegacion a:focus {
+.navegacion .active {
   color: #FED941;
   border-bottom: 1px solid #FED941;
 }
@@ -138,15 +138,33 @@ body {
   left: 3rem;
   padding: 1rem 2.4rem;
   background-color: #FED941;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.boton-amarillo:hover {
+  background-color: #fed841c7;
 }
 
 .amarillo {
   background-color: #FED941;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.amarillo:hover {
+  background-color: #fed841d8;
 }
 
 .negro {
   background-color: #000;
   border: 0.43997px solid #FED941;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.negro:hover {
+  background-color: rgba(0, 0, 0, 0.205);
 }
 
 .boton-negro {
@@ -155,10 +173,16 @@ body {
   border: 0.43997px solid #FED941;
   top: 27.5rem;
   left: 27rem;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
 }
 
 .boton-negro p {
   color: #FED941;
+}
+
+.boton-negro:hover {
+  background-color: rgba(0, 0, 0, 0.712);
 }
 
 .botones {
@@ -212,9 +236,10 @@ main .cards {
 .card__puntuacion {
   position: relative;
   top: 6em;
-  width: 8.5rem;
+  width: 10rem;
   background-color: #000;
   opacity: .64;
+  border-radius: 0px 50px 50px 0;
 }
 
 .card__puntuacion img {
@@ -225,22 +250,15 @@ main .cards {
   color: #fff;
   font-size: 3rem;
   line-height: 1.4;
-}
-
-.card__puntuacion span:first-of-type {
   margin-left: 1rem;
 }
 
-.card__puntuacion-curva {
-  position: relative;
-  right: 1rem;
-  height: 30px;
-  width: 15px;
-  padding: .4rem 1.5rem;
-  border-bottom-right-radius: 30px;
-  border-top-right-radius: 30px;
-  background-color: inherit;
-  z-index: -1;
+.blue {
+  border: 3px solid #0E3FA9;
+}
+
+.yellow {
+  border: 3px solid #FED941;
 }
 
 /****** LOGIN MODAL ******/
@@ -294,7 +312,7 @@ main .cards {
 }
 
 .title_icon {
-  color: #4d90fe;
+  color: #FED941;
   font-size: 2.5rem;
 }
 
@@ -339,18 +357,20 @@ main .cards {
 
 .loginmodal-submit {
   border: 0px;
-  color: #fff;
+  color: #000;
   text-shadow: 0 1px rgba(0, 0, 0, 0.1);
-  background-color: #4d90fe;
+  background-color: #FED941;
   padding: 17px 0px;
   font-family: roboto;
   font-size: 14px;
+  -webkit-transition: all .4s linear;
+  transition: all .4s linear;
 }
 
 .loginmodal-submit:hover {
   border: 0px;
   text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-  background-color: #357ae8;
+  background-color: #fed841a9;
 }
 
 .loginmodal-container a {
@@ -485,5 +505,24 @@ main .cards {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+}
+
+.after {
+  height: 3rem;
+  position: relative;
+}
+
+.after img {
+  width: auto;
+}
+
+.before {
+  position: relative;
+  width: 4rem;
+  height: 3rem;
+}
+
+.before img {
+  width: auto;
 }
 /*# sourceMappingURL=style.css.map */

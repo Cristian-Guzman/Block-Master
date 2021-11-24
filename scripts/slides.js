@@ -1,4 +1,3 @@
-    
 let indice = 1;
 muestraSlides(indice);
 
@@ -10,6 +9,7 @@ setInterval(function tiempo(){
     muestraSlides(indice+=1)
 },4000);
 
+// Cada
 function muestraSlides(n){
     let slides = document.querySelectorAll('.slider');
 

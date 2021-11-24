@@ -4,8 +4,10 @@ const btnEditar = document.querySelector('.btnEditar');
 const btnEliminar = document.querySelector('.btnEliminar');
 const API_REGISTRO = 'http://localhost:4000/results';
 
+// Guarda toda la información de los datos ingresados en las casillas de registro
 btnGuardar.addEventListener('click', async e => {
     e.preventDefault();
+    let title = document.querySelector('#titulo').value;
     let url = document.querySelector('#url').value;
     let fecha = document.querySelector('#fecha').value;
     let sinopsis = document.querySelector('#sinopsis').value;
@@ -16,6 +18,7 @@ btnGuardar.addEventListener('click', async e => {
         await fetch(API_REGISTRO, {
             method: 'POST',
             body: JSON.stringify({
+                title,
                 url,
                 fecha,
                 sinopsis,
@@ -28,6 +31,8 @@ btnGuardar.addEventListener('click', async e => {
         alert('Usuario guardado exitosamente');
     }
 })
+
+// Trae los datos correspondientes al usuario ingresado
 btnBuscar.addEventListener('click', async e => {
     let title = document.querySelector('#titulo').value;
     document.getElementById("titulo").readOnly = true;
@@ -35,8 +40,6 @@ btnBuscar.addEventListener('click', async e => {
     const datos = await fetch(API_REGISTRO);
     const data = await datos.json();
     const buscado = data.find(user => user.title.toLowerCase() === title.toLowerCase())
-    console.log(data);
-    console.log(buscado);
 
     const { vote_average, release_date, poster_path, overview, id } = buscado;
 
@@ -47,6 +50,7 @@ btnBuscar.addEventListener('click', async e => {
     document.querySelector('#promedio').value = vote_average;
 })
 
+// Da la opción de poder editar un usuario ya existente
 btnEditar.addEventListener('click', async e => {
     let title = document.querySelector('#titulo').value;
     let id = document.getElementById('idP').value;
@@ -71,6 +75,7 @@ btnEditar.addEventListener('click', async e => {
     });
 })
 
+// Da la opción de eliminar un usuario ya creado
 btnEliminar.addEventListener('click', async e => {
     const id = document.getElementById('idP').value;
     await fetch(API_REGISTRO +"/"+ id, {

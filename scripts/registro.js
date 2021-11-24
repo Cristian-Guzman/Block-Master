@@ -11,6 +11,14 @@ btn.addEventListener('click', () => {
   modal.style.display = "block";
 })
 
+// Si el usuario hace click en el botón con la X o da click fuera del modal, entonces el modal se cierra
+document.addEventListener("click", function(event) {
+    if (event.target.matches(".fade")) modal.style.display = 'none';
+},
+false
+)
+
+// Agregando el post para poder agregar datos al login de usuario
 formulario.addEventListener('click', async e => {
     e.preventDefault();
     const name = document.querySelector('#name').value;

@@ -5,6 +5,7 @@ $amarillo: #FED941;
 $blanco: #fff;
 $negro: #000;
 $btnNegro: #0C0E16;
+$azul: #0E3FA9;
 
 html {
     font-size: 62.5%;
@@ -42,10 +43,10 @@ body {
         img {
             background-color: $background;
         }
-        &:focus {
-            color: $amarillo;
-            border-bottom: 1px solid $amarillo;
-        }
+    }
+    .active {
+        color: $amarillo;
+        border-bottom: 1px solid $amarillo;
     }
     .btn-search {
         position: relative;
@@ -72,6 +73,7 @@ body {
         border-bottom-right-radius: .8rem;
     }
 }
+
 /* Slides */
 .slides {
     margin-top: -7rem;
@@ -107,20 +109,32 @@ body {
         line-height: 2.8rem;
         font-family: Montserrat;
         text-transform: uppercase;
-    }                
+    } 
 }
 .boton-amarillo {
     top: 32rem;
     left: 3rem;
     padding: 1rem 2.4rem;
     background-color: $amarillo;
+    transition: all .3s ease-in-out;
+    &:hover {
+        background-color: #fed841c7;
+    }
 }
 .amarillo {
     background-color: $amarillo;
+    transition: all .3s ease-in-out;
+    &:hover {
+        background-color: #fed841d8;
+    }
 }
 .negro {
     background-color: $negro;
     border: 0.439971px solid $amarillo;
+    transition: all .3s ease-in-out;
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.205);
+    }
 }
 .boton-negro {
     padding: 1rem 2.4rem;
@@ -128,8 +142,12 @@ body {
     border: 0.439971px solid $amarillo;
     top: 27.5rem;
     left: 27rem;
+    transition: all .3s ease-in-out;
     p {
         color: $amarillo;
+    }
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.712);
     }
 }
 
@@ -179,29 +197,23 @@ main {
         }
         position: relative;
         top: 6em;
-        width: 8.5rem;
+        width: 10rem;
         background-color: $negro;
         opacity: .64;
+        border-radius: 0px 50px 50px 0;
         span {
             color: $blanco;
             font-size: 3rem;
             line-height: 1.4;
-            &:first-of-type {
-                margin-left: 1rem;
-            }
-        }
-        &-curva {
-            position: relative;
-            right: 1rem;
-            height: 30px;
-            width: 15px;
-            padding: .4rem 1.5rem;
-            border-bottom-right-radius: 30px;
-            border-top-right-radius: 30px;
-            background-color: inherit;
-            z-index: -1;
+            margin-left: 1rem;
         }
     }
+}
+.blue {
+    border: 3px solid $azul;
+}
+.yellow {
+    border: 3px solid $amarillo;
 }
 
 /****** LOGIN MODAL ******/
@@ -240,7 +252,8 @@ main {
     font-family: roboto;
   }
   .title_icon {
-      color: #4d90fe;
+      color: $amarillo;
+
       font-size: 2.5rem;
   }
   
@@ -285,18 +298,19 @@ main {
   
   .loginmodal-submit {
     border: 0px;
-    color: #fff;
+    color: $negro;
     text-shadow: 0 1px rgba(0,0,0,0.1); 
-    background-color: #4d90fe;
+    background-color: $amarillo;
     padding: 17px 0px;
     font-family: roboto;
     font-size: 14px;
+    transition: all .4s linear ;
   }
   
   .loginmodal-submit:hover {
     border: 0px;
     text-shadow: 0 1px rgba(0,0,0,0.3);
-    background-color: #357ae8;
+    background-color: #fed841a9;
   }
   
   .loginmodal-container a {
@@ -407,4 +421,20 @@ main {
     display: flex;
     justify-content: center;
     align-items: flex-start;
+}
+
+.after {
+    height: 3rem;
+    position: relative;
+    img {
+        width: auto;
+    }
+}
+.before {
+    position: relative;
+    width: 4rem;
+    height: 3rem;
+    img {
+        width: auto;
+    }
 }
